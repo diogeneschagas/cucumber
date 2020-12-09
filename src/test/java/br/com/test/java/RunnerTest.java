@@ -7,7 +7,10 @@ import org.junit.runner.RunWith;
 @RunWith(Cucumber.class)
 @CucumberOptions(
         plugin = "pretty",
-        features = {"src/test/java/resources"}
+        features = {"src/test/java/resources"},
+        monochrome = true,
+        snippets = CucumberOptions.SnippetType.CAMELCASE,
+        dryRun = false // Validação do mapeamento enquanto os testes estãõ sendo criados
         )
 public class RunnerTest {
 
