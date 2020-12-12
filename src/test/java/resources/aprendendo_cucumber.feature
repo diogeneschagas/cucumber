@@ -7,3 +7,4 @@ Scenario: Deve executar a especificacao
   Given que criei o arquivo corretamente
   When executar
   Then a especificacao deve finalizar com sucesso
+  Then passo enxerido

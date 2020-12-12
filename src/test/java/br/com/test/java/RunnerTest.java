@@ -10,7 +10,10 @@ import org.junit.runner.RunWith;
         features = {"src/test/java/resources"},
         monochrome = true,
         snippets = CucumberOptions.SnippetType.CAMELCASE,
-        dryRun = false // Validação do mapeamento enquanto os testes estãõ sendo criados
+        dryRun = false // Validação do mapeamento enquanto os testes estão sendo criados
+                        // muito útil quando temos testes demorados, pois ele fará um mapeamento
+
+
         )
 public class RunnerTest {
 
