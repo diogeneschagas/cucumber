@@ -54,4 +54,25 @@ public class AprendendoCucumber {
     public void oValorDoContadorSera(int arg1) {
         Assert.assertEquals(arg1,contador);
     }
+
+    /**
+     * Cenário 03 - Calcular atraso na entrega
+     */
+
+    @Given("que a entrega eh dia {int}\\/{int}\\/{int}")
+    public void queAEntregaEhDia(int dia, int mes, int ano) {
+        // Write code here that turns the phrase above into concrete actions
+        throw new io.cucumber.java.PendingException();
+    }
+    @When("a atrasar em {int} dias")
+    public void aAtrasarEmDias(int dias) {
+        // Write code here that turns the phrase above into concrete actions
+        throw new io.cucumber.java.PendingException();
+    }
+    @Then("a entrega sera efetuada em {int}\\/{int}\\/{int}")
+    public void aEntregaSeraEfetuadaEm(int dia, int mes, int ano) {
+        // Write code here that turns the phrase above into concrete actions
+        throw new io.cucumber.java.PendingException();
+    }
+
 }
