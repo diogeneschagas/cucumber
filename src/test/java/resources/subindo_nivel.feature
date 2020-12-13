@@ -5,9 +5,9 @@ Feature: Subindo o nível das práticas
 
 Scenario: Deve criar steps genericos para estes passos
   Given que o ticket eh "AF345"
-  Given que o valor da passagem eh R$ 230,45
-  Given que o nome do passageiro eh "Fulano da Silva"
-  Given que o telefone do passageiro eh 9999-9999
+  And que o valor da passagem eh R$ 230,45
+  And que o nome do passageiro eh "Fulano da Silva"
+  And que o telefone do passageiro eh 9999-9999
   When criar os steps
   Then o teste vai funcionar
 
