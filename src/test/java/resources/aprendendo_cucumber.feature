@@ -21,6 +21,11 @@ Scenario: Deve incrementar contador
 
 
 Scenario: Deve calcular atraso na entrega
-  Given que a entrega eh dia 05/10/2020
-  When a atrasar em 2 dias
-  Then a entrega sera efetuada em 07/04/2018
+  Given que a entrega eh dia 10/12/2020
+  When atrasar em 2 "dias"
+  Then a entrega sera efetuada em "12/12/2020"
+
+  Scenario: Deve calcular atraso na entrega da China
+    Given que a entrega eh dia 10/12/2020
+    When atrasar em 2 "meses"
+    Then a entrega sera efetuada em "10/02/2021"
