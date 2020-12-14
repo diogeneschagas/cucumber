@@ -1,5 +1,6 @@
-package br.com.test.java;
+package br.com.test.java.steps;
 
+import br.com.test.java.ExceptionTests;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
@@ -10,7 +11,7 @@ import java.text.SimpleDateFormat;
 import java.util.Calendar;
 import java.util.Date;
 
-public class AprendendoCucumber {
+public class AprendendoCucumberSteps {
 
     /**
      * Cenário 1: Aprendendo a escrever cenários

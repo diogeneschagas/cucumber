@@ -1,10 +1,10 @@
-package br.com.test.java;
+package br.com.test.java.steps;
 
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 
-public class SubindoNivel {
+public class SubindoNivelSteps {
 
     /**
      *
