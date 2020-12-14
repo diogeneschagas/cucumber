@@ -7,13 +7,12 @@ import org.junit.runner.RunWith;
 @RunWith(Cucumber.class)
 @CucumberOptions(
         plugin = "pretty",
-        features = {"src/test/java/resources/features"},
+        features = {"src/test/java/resources/features/locadora.feature"},
         glue = "br.com.test.java.steps",
         monochrome = true,
         snippets = CucumberOptions.SnippetType.CAMELCASE,
         dryRun = false // Validação do mapeamento enquanto os testes estão sendo criados
                         // muito útil quando temos testes demorados, pois ele fará um mapeamento
-
 
         )
 public class RunnerTest {
