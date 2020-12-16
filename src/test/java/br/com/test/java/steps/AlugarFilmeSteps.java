@@ -1,6 +1,7 @@
 package br.com.test.java.steps;
 
 import br.com.entidades.NotaAluguel;
+import br.com.exceptions.ExceptionTests;
 import br.com.servicos.AluguelService;
 import br.com.entidades.Filme;
 import io.cucumber.java.en.Given;
@@ -14,8 +15,9 @@ import java.util.Date;
 public class AlugarFilmeSteps {
 
     private Filme filme;
-    private AluguelService aluguel;
+//    private AluguelService aluguel;
     private NotaAluguel nota;
+    private String erro;
 
     @Given("um filme com estoque de {int} unidades")
     public void umFilmeComEstoqueDeUnidades(int qtdFilmesDisponiveis) {
@@ -29,7 +31,11 @@ public class AlugarFilmeSteps {
     @When("alugar")
     public void alugar() {
         AluguelService aluguel = new AluguelService();
-        nota = aluguel.alugar(filme);
+        try {
+            nota = aluguel.alugar(filme);
+        } catch (ExceptionTests e) {
+            erro = e.getMessage();
+        }
     }
     @Then("o preco do aluguel sera R$ {int}")
     public void oPrecoDoAluguelSeraR$(int precoFinalAluguel) {
@@ -51,6 +57,11 @@ public class AlugarFilmeSteps {
     @Then("o estoque do filme sera {int} unidade")
     public void oEstoqueDoFilmeSeraUnidade(int qtdEstoque) {
         Assert.assertEquals(qtdEstoque, filme.getEstoque());
+    }
+
+    @Then("nao sera possivel por falta de estoque")
+    public void naoSeraPossivelPorFaltaDeEstoque() {
+        Assert.assertEquals("Filme sem estoque",erro);
     }
 
 }

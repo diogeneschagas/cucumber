@@ -11,11 +11,11 @@ Scenario: Deve alugar um filme com sucesso
   And a data de entrega sera no dia seguinte
   And o estoque do filme sera 1 unidade
 
-#Scenario: Nao deve alugar um filme sem estoque
-#  Given um filme com  estoque de 0 unidades
-#  When alugar
-#  Then nao sera possivel por falta de estoque
-#  And o estoque do filme sera 0 unidade
+Scenario: Nao deve alugar um filme sem estoque
+  Given um filme com estoque de 0 unidades
+  When alugar
+  Then nao sera possivel por falta de estoque
+  And o estoque do filme sera 0 unidade
 #
 #Scenario: Deve dar condicoes especiais para categoria estendida
 #  Given um filme com estoque de 2 unidades

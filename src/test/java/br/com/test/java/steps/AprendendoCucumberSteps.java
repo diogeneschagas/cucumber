@@ -1,6 +1,6 @@
 package br.com.test.java.steps;
 
-import br.com.test.java.ExceptionTests;
+import br.com.exceptions.ExceptionTests;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;

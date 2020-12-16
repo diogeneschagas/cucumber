@@ -1,4 +1,4 @@
-package br.com.test.java;
+package br.com.exceptions;
 
 public class ExceptionTests extends Exception {
     private String msg;
