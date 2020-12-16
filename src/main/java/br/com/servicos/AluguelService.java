@@ -7,15 +7,20 @@ import br.com.utils.DateUtils;
 
 public class AluguelService {
 
-    public NotaAluguel alugar(Filme filme) throws ExceptionTests {
-        if(filme.getEstoque() == 0){
+    public NotaAluguel alugar(Filme filme, String tipoAluguel) throws ExceptionTests {
+        if (filme.getEstoque() == 0) {
             throw new ExceptionTests("Filme sem estoque");
         }
         NotaAluguel nota = new NotaAluguel();
+        if ("estendido".equals(tipoAluguel)) {
+            nota.setPreco(filme.getAluguel() * 2);
+        } else {
+            nota.setPreco(filme.getAluguel());
+        }
         nota.setPreco(filme.getAluguel());
         nota.setDataEntrega(DateUtils.obterDataDiferencaDias(1));
 
-        filme.setEstoque(filme.getEstoque()-1);
+        filme.setEstoque(filme.getEstoque() - 1);
         return nota;
     }
 }
