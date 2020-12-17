@@ -4,11 +4,14 @@ import br.com.entidades.NotaAluguel;
 import br.com.exceptions.ExceptionTests;
 import br.com.servicos.AluguelService;
 import br.com.entidades.Filme;
+import br.com.utils.DateUtils;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 import org.junit.Assert;
 
+import java.text.DateFormat;
+import java.text.SimpleDateFormat;
 import java.util.Calendar;
 import java.util.Date;
 
@@ -80,11 +83,16 @@ public class AlugarFilmeSteps {
 
     @Then("a data de entrega sera de {int} dias")
     public void aDataDeEntregaSeraDeDias(Integer int1) {
+        Date dataEsperada = DateUtils.obterDataDiferencaDias(3);
+        Date dataReal = nota.getDataEntrega();
 
+        DateFormat format = new SimpleDateFormat("dd/MM/yyyy");
+
+        Assert.assertEquals(format.format(dataEsperada),format.format(dataReal));
     }
 
     @Then("a pontuacao recebida sera de {int} pontos")
-    public void aPontuacaoRecebidaSeraDePontos(Integer int1) {
-
+    public void aPontuacaoRecebidaSeraDePontos(int int1) {
+        Assert.assertEquals(int1,nota.getPontuacao());
     }
 }
