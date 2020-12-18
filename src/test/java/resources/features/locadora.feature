@@ -8,7 +8,7 @@ Feature: Alugar filme
     And que o preco de aluguel seja R$ 3
     When alugar
     Then o preco do aluguel sera R$ 3
-    And a data de entrega sera no dia seguinte
+    And a data de entrega sera de 1 dias
     And o estoque do filme sera 1 unidade
 
   Scenario: Nao deve alugar um filme sem estoque

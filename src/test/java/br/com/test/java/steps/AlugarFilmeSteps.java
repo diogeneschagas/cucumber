@@ -48,20 +48,6 @@ public class AlugarFilmeSteps {
         Assert.assertEquals(precoFinalAluguel, nota.getPreco());
     }
 
-    @Then("a data de entrega sera no dia seguinte")
-    public void aDataDeEntregaSeraNoDiaSeguinte() {
-        Calendar cal = Calendar.getInstance();
-        cal.add(Calendar.DAY_OF_MONTH, 1);
-
-        Date dataRetorno = nota.getDataEntrega();
-        Calendar calRetorno = Calendar.getInstance();
-        calRetorno.setTime(dataRetorno);
-
-        Assert.assertEquals(cal.get(Calendar.DAY_OF_MONTH), calRetorno.get(Calendar.DAY_OF_MONTH));
-        Assert.assertEquals(cal.get(Calendar.MONTH), calRetorno.get(Calendar.MONTH));
-        Assert.assertEquals(cal.get(Calendar.YEAR), calRetorno.get(Calendar.YEAR));
-    }
-
     @Then("o estoque do filme sera {int} unidade")
     public void oEstoqueDoFilmeSeraUnidade(int qtdEstoque) {
         Assert.assertEquals(qtdEstoque, filme.getEstoque());
@@ -83,7 +69,7 @@ public class AlugarFilmeSteps {
 
     @Then("a data de entrega sera de {int} dias")
     public void aDataDeEntregaSeraDeDias(Integer int1) {
-        Date dataEsperada = DateUtils.obterDataDiferencaDias(3);
+        Date dataEsperada = DateUtils.obterDataDiferencaDias(int1);
         Date dataReal = nota.getDataEntrega();
 
         DateFormat format = new SimpleDateFormat("dd/MM/yyyy");
