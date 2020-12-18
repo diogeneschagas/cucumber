@@ -62,9 +62,9 @@ public class AlugarFilmeSteps {
      * Cenário 03 - Aluguel estendido
      */
 
-    @Given("que o tipo de aluguel seja estendido")
-    public void queOTipoDeAluguelSejaEstendido() {
-        tipoAluguel = "estendido";
+    @Given("que o tipo de aluguel seja {string}")
+    public void queOTipoDeAluguelSejaEstendido(String tipo) {
+        tipoAluguel = tipo;
     }
 
     @Then("a data de entrega sera de {int} dias")

@@ -20,8 +20,17 @@ Feature: Alugar filme
   Scenario: Deve dar condicoes especiais para categoria estendida
     Given um filme com estoque de 2 unidades
     And que o preco de aluguel seja R$ 4
-    And que o tipo de aluguel seja estendido
+    And que o tipo de aluguel seja "estendido"
     When alugar
     Then o preco do aluguel sera R$ 8
     And a data de entrega sera de 3 dias
     And a pontuacao recebida sera de 2 pontos
+
+  Scenario: Deve alugar para categoria Comum
+    Given um filme com estoque de 2 unidades
+    And que o preco de aluguel seja R$ 4
+    And que o tipo de aluguel seja "comum"
+    When alugar
+    Then o preco do aluguel sera R$ 4
+    And a data de entrega sera de 1 dias
+    And a pontuacao recebida sera de 1 pontos
