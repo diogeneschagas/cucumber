@@ -14,14 +14,12 @@ public class AluguelService {
         NotaAluguel nota = new NotaAluguel();
         if ("estendido".equals(tipoAluguel)) {
             nota.setPreco(filme.getAluguel() * 2);
-            nota.setDataEntrega(DateUtils.obterDataDiferencaDias(1));
+            nota.setDataEntrega(DateUtils.obterDataDiferencaDias(3));
             nota.setPontuacao(2);
         } else {
             nota.setPreco(filme.getAluguel());
             nota.setDataEntrega(DateUtils.obterDataDiferencaDias(1));
         }
-        nota.setPreco(filme.getAluguel());
-
 
         filme.setEstoque(filme.getEstoque() - 1);
         return nota;
